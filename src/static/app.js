@@ -19,7 +19,48 @@ document.addEventListener("DOMContentLoaded", () => {
         activityCard.className = "activity-card";
 
         const spotsLeft = details.max_participants - details.participants.length;
-
+        // Add sample activities if not already present
+        if (Object.keys(activities).length === 0) {
+          // Sports
+          activities["Basketball"] = {
+            description: "Team sport played on a rectangular court.",
+            schedule: "Mondays 18:00-20:00",
+            max_participants: 12,
+            participants: []
+          };
+          activities["Swimming"] = {
+            description: "Improve your swimming skills with a coach.",
+            schedule: "Wednesdays 17:00-18:30",
+            max_participants: 10,
+            participants: []
+          };
+          // Artistic
+          activities["Painting"] = {
+            description: "Explore your creativity with acrylics and watercolors.",
+            schedule: "Fridays 15:00-17:00",
+            max_participants: 8,
+            participants: []
+          };
+          activities["Photography"] = {
+            description: "Learn the basics of digital photography.",
+            schedule: "Saturdays 10:00-12:00",
+            max_participants: 10,
+            participants: []
+          };
+          // Intellectual
+          activities["Chess Club"] = {
+            description: "Challenge your mind with weekly chess matches.",
+            schedule: "Tuesdays 16:00-18:00",
+            max_participants: 16,
+            participants: []
+          };
+          activities["Book Discussion"] = {
+            description: "Join us to discuss a new book every month.",
+            schedule: "Last Thursday of the month 19:00-20:30",
+            max_participants: 20,
+            participants: []
+          };
+        }
         activityCard.innerHTML = `
           <h4>${name}</h4>
           <p>${details.description}</p>
